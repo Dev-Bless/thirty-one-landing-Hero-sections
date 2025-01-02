@@ -2,3 +2,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "SN Pro";
+  src: url('/assets/fonts/SNPro-Bold.otf') format("woff2-variations");
+  font-weight: 200 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SN Light";
+  src: url('/assets/fonts/SNPro-Regular.otf') format("woff2-variations");
+  font-weight: 200 900;
+  font-style: normal;
+}
