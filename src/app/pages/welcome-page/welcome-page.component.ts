@@ -10,5 +10,7 @@ import {RouterLink} from '@angular/router';
   styleUrl: './welcome-page.component.css'
 })
 export class WelcomePageComponent {
+  Praveen = '@praveenjuge'
+  BlessAhadjie = '@blessAhadjie'
 
 }
