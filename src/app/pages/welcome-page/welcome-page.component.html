@@ -1,5 +1,44 @@
-<div class="flex flex-col items-center">
-  <h1 class="cursor-pointer" [routerLink]="['/landing-page-1']">landing Page 1</h1>
-  <h1 class="cursor-pointer" [routerLink]="['/landing-page-2']">landing Page 2</h1>
-  <h1 class="cursor-pointer" [routerLink]="['/landing-page-3']">landing Page 3</h1>
+<div class="min-h-screen bg-white font-geist">
+  <!-- Hero section -->
+  <div class="px-4 md:px-16 py-12 md:py-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">31 Landing Page Hero Sections</h1>
+      <p class="text-lg md:text-xl text-gray-600 mb-8">A collection of responsive hero section designs to inspire your next project. Built with Tailwind CSS and Angular.</p>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="https://github.com/Dev-Bless/thirty-one-landing-Hero-sections"
+           class="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+          </svg>
+          View on GitHub
+        </a>
+        <a href="https://t.co/dNvm8zmbVs"
+           class="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 38 57" fill="none">
+            <path fill="currentColor" d="M19 28.5c5.247 0 9.5-4.253 9.5-9.5s-4.253-9.5-9.5-9.5-9.5 4.253-9.5 9.5 4.253 9.5 9.5 9.5z"/>
+            <path fill="currentColor" d="M0 0v57h38V0H0zm19 47.5c-12.15 0-22-9.85-22-22s9.85-22 22-22 22 9.85 22 22-9.85 22-22 22z"/>
+          </svg>
+          View in Figma
+        </a>
+      </div>
+
+
+      <!-- Credits -->
+      <div class="mb-12 text-gray-600">
+        <p class="mb-4">Design by <a href="https://x.com/praveenjuge" class="text-blue-500 hover:underline">{{Praveen}}</a></p>
+        <p>Developed by <a href="https://x.com/Ahadjiebless1" class="text-blue-500 hover:underline">{{ BlessAhadjie }}</a></p>
+      </div>
+
+      <!-- Navigation Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        @for(i of [].constructor(31); track $index) {
+          <a [routerLink]="['/landing-page-' + ($index + 1)]"
+             class="p-4 border border-gray-200 rounded-lg hover:border-gray-300 hover:shadow-sm transition-all">
+            <span class="text-lg font-medium">Landing Page {{$index + 1}}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
 </div>
