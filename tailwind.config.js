@@ -8,6 +8,8 @@ module.exports = {
       fontFamily: {
         snproBold: ['"SN Pro"', 'sans-serif'],
         snproLight: ['"SN Light"', 'sans-serif'],
+        geist: ['Geist', 'sans-serif'],
+        shantell: ['Shantell Sans', 'cursive']
 
       },
       backgroundImage: {
