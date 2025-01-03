@@ -9,7 +9,8 @@ module.exports = {
         snproBold: ['"SN Pro"', 'sans-serif'],
         snproLight: ['"SN Light"', 'sans-serif'],
         geist: ['Geist', 'sans-serif'],
-        shantell: ['Shantell Sans', 'cursive']
+        shantell: ['Shantell Sans', 'cursive'],
+        inter: ['Inter', 'sans-serif'],
 
       },
       backgroundImage: {
