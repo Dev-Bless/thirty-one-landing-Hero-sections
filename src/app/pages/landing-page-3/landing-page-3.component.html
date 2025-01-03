@@ -3,22 +3,30 @@
     <div class="w-[100%] py-5 px-10 flex justify-between items-center">
       <img src="assets/page-2/logo.svg">
 
-      <div [ngClass]="{ 'hidden': !isMenuOpen, 'flex z-50 absolute bg-white right top-0 right-1 px-5 gap-10': isMenuOpen }" class="lg:flex flex-col lg:flex-row lg:items-center lg:gap-[20px] font-[500]">
-        <h1 class="cursor-pointer" [ngClass]="{'hidden':!isMenuOpen}" (click)="isMenuOpen = false">x</h1>
-        <p class="flex items-center justify-center gap-1 cursor-pointer text-[#083344]">Features <img class="mt-1" src="assets/page-3/arrowDown.svg" alt="arrow down"> </p>
-        <p class="flex items-center justify-center gap-1 cursor-pointer text-[#083344]">Enterprise <img class="mt-1" src="assets/page-3/arrowDown.svg" alt="arrow down"> </p>
-        <p class="cursor-pointer text-[#083344]">Pricing</p>
-        <p class="cursor-pointer text-[#083344]">Download</p>
-        <p class="cursor-pointer text-[#083344]">Resources</p>
+      <!-- Hamburger for mobile -->
+      <button class="lg:hidden" (click)="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+
+      <!-- Menu items -->
+      <div [ngClass]="{'hidden': !isMenuOpen, 'absolute inset-0 bg-white p-6 z-20': isMenuOpen}"
+           class="lg:static lg:flex lg:flex-row lg:bg-transparent lg:p-0 lg:items-center lg:gap-[20px] font-[500]">
+        <button class="absolute top-4 right-4 lg:hidden" (click)="isMenuOpen = false">✕</button>
+        <nav class="flex flex-col lg:flex-row gap-6 lg:gap-[20px] mt-12 lg:mt-0">
+          <p class="flex items-center gap-1 cursor-pointer text-[#083344]">Features <img class="mt-1" src="assets/page-3/arrowDown.svg"></p>
+          <p class="flex items-center gap-1 cursor-pointer text-[#083344]">Enterprise <img class="mt-1" src="assets/page-3/arrowDown.svg"></p>
+          <p class="cursor-pointer text-[#083344]">Pricing</p>
+          <p class="cursor-pointer text-[#083344]">Download</p>
+          <p class="cursor-pointer text-[#083344]">Resources</p>
+        </nav>
       </div>
 
-    <div class="flex items-center gap-2">
-      <p class="cursor-pointer text-[#083344] font-[500]">Login</p>
-
-      <div class="w-[170px] h-[36px] bg-[#DC2626] text-white cursor-pointer flex items-center justify-center rounded-[8px]">
-        Get Started For Free
+      <div class="hidden lg:flex items-center gap-4">
+        <p class="cursor-pointer text-[#083344] font-[500]">Login</p>
+        <button class="bg-[#DC2626] text-white px-4 py-2 rounded-lg">Get Started For Free</button>
       </div>
-    </div>
 
     </div>
 
@@ -39,7 +47,7 @@
       </p>
 
       <!-- Buttons -->
-      <div class="flex gap-4 mt-2">
+      <div class="flex flex-col md:flex-row gap-4 mt-2">
         <button class="bg-[#DC2626] text-white px-6 py-3 rounded-lg font-geist flex items-center gap-2">
           Get Started for Free
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -53,9 +61,27 @@
     </div>
 
     <!-- Right image -->
-    <div class="flex-1 absolute z-0 right-0 mt-[18%]">
+    <div class="hidden md:flex md:right-0 md:w-[500px] lg:w-[70%] lg:flex lg:flex-1 absolute z-0 lg:right-0 lg:mt-[18%]">
       <img class="w-full" src="assets/page-3/hero-image.svg" alt="Illustration of person working">
     </div>
   </div>
+
+
+<div class="w-full px-16 py-12">
+  <div class="relative w-full flex items-center justify-between   border-[1px] border-[#000000]/20 bg-white/20 rounded-[8px] mt-[12%]">
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-16 py-12">
+      @for (feature of features; track $index){
+      <div >
+        <div class="flex flex-col gap-4">
+          <img [src]="'assets/page-3/' + feature.icon" alt="Feature icon" class="w-8 h-8">
+          <h3 class="font-geist font-bold text-xl">{{feature.title}}</h3>
+          <p class="font-geist text-[#475569] leading-relaxed">{{feature.description}}</p>
+        </div>
+      </div>
+      }
+    </section>
+</div>
+</div>
+
 
 </main>
